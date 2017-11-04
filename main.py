@@ -30,10 +30,8 @@ def process_case(root, patient):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("directory")
+    parser.add_argument("directory", help='a root directory containing at least one patient.')
     args = parser.parse_args()
-    if not args.directory:
-        sys.exit("Please specify a root directory containing at least one patient.")
     directory = args.directory
     c = 0
     for name in os.listdir(directory):
