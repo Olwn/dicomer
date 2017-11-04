@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 import os
+import sys
 import argparse
 import dicom
 
@@ -32,7 +33,7 @@ if __name__ == '__main__':
     parser.add_argument("directory")
     args = parser.parse_args()
     if not args.directory:
-        print "Please specify a root directory containing at least one patient."
+        sys.exit("Please specify a root directory containing at least one patient.")
     directory = args.directory
     c = 0
     for name in os.listdir(directory):
