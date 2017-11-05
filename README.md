@@ -3,9 +3,8 @@
 ## install
 
 ```shell
-git clone https://github.com/Olwn/dicomer.git
-cd dicomer
-pip install -r requirements.txt 
+git clone https://github.com/pydicom/pydicom.git --depth=1
+cd pydicom && python setup.py install
 ```
 
 ## usage
@@ -20,6 +19,8 @@ Assuming files are organized as following
      * ...
 
 ```shell
+ git clone https://github.com/Olwn/dicomer.git
+ cd dicomer
  python main.py path/to/a_directory
 ```
 For each patient, the program will generate one new directory 

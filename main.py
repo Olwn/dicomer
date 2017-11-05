@@ -2,19 +2,18 @@
 # encoding: utf-8
 
 import os
-import sys
 import argparse
-import dicom
+from pydicom import dicomio
 
 info_deleted = ['PatientName', 'PatientBirthDate']
 
 
 def de_sensitive(path, write_to):
-    dc = dicom.read_file(path, force=True)
+    dc = dicomio.read_file(path, force=True)
     for tag in info_deleted:
         if tag in dc:
             del dc[dc.data_element(tag).tag]
-    dicom.write_file(write_to, dc)
+    dicomio.write_file(write_to, dc)
 
 
 def process_case(root, patient):
