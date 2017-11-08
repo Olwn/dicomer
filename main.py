@@ -5,7 +5,7 @@ import os
 import argparse
 from pydicom import dicomio
 
-info_deleted = ['PatientName', 'PatientBirthDate']
+info_deleted = ['PatientName', 'PatientBirthDate', 'PatientID']
 
 
 def de_sensitive(path, write_to):
